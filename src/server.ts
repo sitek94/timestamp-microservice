@@ -52,7 +52,7 @@ app.get('/api/timestamp/:date?', (req, res) => {
   });
 });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // Start listening for requests
 app.listen(PORT, () => console.log(`Server is listening on port: ${PORT}`));
