@@ -4,9 +4,10 @@
   "description": "This project is a part of **APIs and Microservices Projects Certification** by [freeCodeCamp](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/timestamp-microservice).",
   "main": "server.js",
   "scripts": {
-    "start": "ts-node src/server.ts",
+    "start": "ts-node dist/server.js",
+    "postinstall": "tsx",
     "dev": "nodemon src/server.ts",
-    "build": "tsc"
+    "deploy": "git add . && git commit -m \"deploy\""
   },
   "repository": {
     "type": "git",
