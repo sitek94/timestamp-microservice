@@ -5,7 +5,7 @@
  * https://devhints.io/wip/intl-datetime
  */
 export function formatDate(date: Date) {
-  return new Intl.DateTimeFormat(undefined, {
+  const dateString = new Intl.DateTimeFormat(undefined, {
     timeZoneName: 'short',
     year: 'numeric',
     month: 'short',
@@ -16,4 +16,10 @@ export function formatDate(date: Date) {
     second: '2-digit',
     hour12: false,
   }).format(date);
+
+  const [weekday, monthAndDay, year, timeAndZone] = dateString.split(', ');
+
+  // The format required by freeCodeCamp:
+  // -> Fri, Dec 25 2015 01:00:00 GMT+1
+  return `${weekday}, ${monthAndDay} ${year} ${timeAndZone}`;
 }
