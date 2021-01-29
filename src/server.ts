@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { prototype } from 'events';
+import path from 'path';
 import { formatDate } from './utils';
 
 const app = express();
@@ -13,7 +13,7 @@ app.use(express.static('public'));
 
 // Basic route
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/views/index.html');
+  res.sendFile(path.resolve('views/index.html'));
 });
 
 // Timestamp api route
