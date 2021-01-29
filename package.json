@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "ts-node dist/server.js",
-    "postinstall": "tsx",
+    "postinstall": "tsc",
     "dev": "nodemon src/server.ts",
     "deploy": "git add . && git commit -m \"deploy\""
   },
