@@ -1,6 +1,6 @@
 # Timestamp Microservice
 
-This project is a part of **APIs and Microservices Projects Certification** by [freeCodeCamp](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/timestamp-microservice).
+This project is my solution for [APIs and Microservices Projects - Timestamp Microservice] and it's a part of APIs and Microservices Certification by [freeCodeCamp].
 
 ## Requirements
 
@@ -17,3 +17,7 @@ This project is a part of **APIs and Microservices Projects Certification** by [
 - [x] An empty date parameter should return the current time in a `JSON` object with a unix key
 
 - [x] An empty date parameter should return the current time in a `JSON` object with a utc key
+
+
+[APIs and Microservices Projects - Timestamp Microservice]: https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/request-header-parser-microservice
+[freeCodeCamp]: https://www.freecodecamp.org/
