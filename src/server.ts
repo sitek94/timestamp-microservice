@@ -1,7 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
-import { formatDate } from './utils';
 
 const app = express();
 
@@ -16,31 +15,35 @@ app.get('/', (req, res) => {
   res.sendFile(path.resolve('views/index.html'));
 });
 
-// Timestamp api route
-app.get('/api/timestamp/:date?', (req, res) => {
-  const date = req.params.date;
-  const timestamp = Number(date);
-  const dateObj = new Date(date);
+// Empty request
+app.get('/api/timestamp/', (req, res) => {
+  const now = new Date();
 
-  // No parameter provided return values for current time
-  if (date === undefined) {
-    const now = new Date();
+  return res.json({
+    unix: now.getTime(),
+    utc: now.toUTCString(),
+  });
+});
 
-    return res.json({
-      unix: now.getTime(),
-      utc: formatDate(now),
-    });
-  }
+// Request with date_string param
+app.get('/api/timestamp/:date_string?', (req, res) => {
+  const dateString = req.params.date_string;
 
-  // User provided a number, treat it as timestamp
-  if (!isNaN(timestamp)) {
+
+  // dateString starts with 5 digits, treat it as timestamp
+  if (/^\d{5,}/.test(dateString)) {
+    const timestamp = +dateString;
+
     return res.json({
       unix: timestamp,
-      utc: formatDate(new Date(timestamp)),
+      utc: new Date(timestamp).toUTCString(),
     });
   }
 
-  // Invalid format provided, return error
+  // Try to convert dateString to Date object
+  const dateObj = new Date(dateString);
+
+  // Invalid format provided
   if (dateObj.toString() === 'Invalid Date') {
     return res.json({ error: 'Invalid Date' });
   }
@@ -48,7 +51,7 @@ app.get('/api/timestamp/:date?', (req, res) => {
   // Correct format, return values for given date
   return res.json({
     unix: dateObj.getTime(),
-    utc: formatDate(dateObj),
+    utc: dateObj.toUTCString(),
   });
 });
 
