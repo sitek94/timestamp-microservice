@@ -15,88 +15,87 @@
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <h1>
-        <span class="timestamp">Timestamp</span>
-        <span class="microservice">Microservice</span>
-      </h1>
-    </header>
+  <header>
+    <h1>
+      <span class="primary-color">Timestamp</span><wbr><span>Microservice</span>
+    </h1>
+  </header>
 
-    <hr />
+  <main>
+    <!-- Valid date -->
+    <section>
+      <h2>Valid date</h2>
+      <pre>
+        GET /api/timestamp/2020-12-30
+      </pre>
+      <pre>
+        {
+        &emsp; "unix": 1609286400000,
+        &emsp; "utc": "Wed, Dec 30, 2020, 01:00:00 GMT+1"
+        }
+      </pre>
+      <form action="api/timestamp/2020-12-30" method="GET">
+        <button type="submit">Try it</button>
+      </form>
+    </section>
 
-    <main>
-      <h2>Example Usage</h2>
-      <hr />
+    <!-- Unix timestamp -->
+    <section>
+      <h2>Unix timestamp</h2>
+      <pre>
+        GET /api/timestamp/1451001600000
+      </pre>
+      <pre>
+        {
+        &emsp; "unix": 1451001600000,
+        &emsp; "utc": "Fri, Dec 25, 2015, 01:00:00 GMT+1"
+        }
+      </pre>
+      <form action="api/timestamp/1451001600000" method="GET">
+        <button type="submit">Try it</button>
+      </form>
+    </section>
 
-      <!-- BASE URL -->
-      <div class="example">
-        Base url: <br />
-        <pre class="request">
-          https://simple-timestamp-service.herokuapp.com
-        </pre>
-      </div>
+    <!-- Current time (empty parameter) -->
+    <section>
+      <h2>
+        <nobr>Current time</nobr>
+        <nobr>(empty parameter)</nobr>
+      </h2>
+      <pre>
+        GET /api/timestamp
+      </pre>
+      <pre>
+        {
+        &emsp; "unix": 1611947123417,
+        &emsp; "utc": "Fri, Jan 29, 2021, 20:05:23 GMT+1"
+        }
+      </pre>
+      <form action="api/timestamp" method="GET">
+        <button type="submit">Try it</button>
+      </form>
+    </section>
 
-      <!-- VALID DATE -->
-      <div class="example">
-        <a href="/api/timestamp/2020-12-30">Valid date</a>
-        <pre class="request">
-          GET /api/timestamp/2020-12-30
-        </pre>
-        <pre class="json">
-{
-  "unix": 1609286400000,
-  "utc": "Wed, Dec 30, 2020, 01:00:00 GMT+1"
-}
-        </pre>
-      </div>
+    <!-- Invalid date -->
+    <section>
+      <h2>Invalid date</h2>
+      <pre>
+        GET /api/hello-guys
+      </pre>
+      <pre>
+        {
+        &emsp; "error": "Invalid Date"
+        }
+      </pre>
+      <form action="api/timestamp/hello-guys" method="GET">
+        <button type="submit">Try it</button>
+      </form>
+    </section>
+  </main>
 
-      <!-- UNIX TIMESTAMP -->
-      <div class="example">
-        <a href="/api/timestamp/1451001600000">Unix timestamp</a>
-        <pre class="request">
-          GET /api/timestamp/1451001600000
-        </pre>
-        <pre class="json">
-{
-  "unix": 1451001600000,
-  "utc": "Fri, Dec 25, 2015, 01:00:00 GMT+1"
-}
-        </pre>
-      </div>
-
-      <!-- CURRENT TIME -->
-      <div class="example">
-        <a href="/api/timestamp">Empty parameter &rarr; current time</a>
-        <pre class="request">
-          GET /api/timestamp
-        </pre>
-        <pre class="json">
-{
-  "unix": 1611947123417,
-  "utc": "Fri, Jan 29, 2021, 20:05:23 GMT+1"
-}
-        </pre>
-      </div>
-
-      <!-- INVALID DATE -->
-      <div class="example">
-        <a href="/api/timestamp/hello-guys">Invalid date</a>
-        <pre class="request">
-          GET /api/timestamp/hello-guys
-        </pre>
-        <pre class="json">
-{
-  "error": "Invalid Date"
-}
-        </pre>
-      </div>
-    </main>
-
-    <footer>
-      by <a href="https://github.com/sitek94">Maciek Sitkowski</a> 2021
-    </footer>
-  </div>
+  <footer>
+    <a href="https://github.com/sitek94">Maciek Sitkowski</a> 2021
+  </footer>
 </body>
 
 </html>
