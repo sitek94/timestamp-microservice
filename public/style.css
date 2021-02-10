@@ -166,7 +166,7 @@ footer {
 /* ==================== */
 /* BUTTON */
 /* ==================== */
-button {
+.btn {
   cursor: pointer;
   padding: 11px 20px;
   font-size: 16px;
@@ -178,21 +178,43 @@ button {
   border: none;
   transition: background-color 300ms;
 }
-button:hover,
-button:focus {
+.btn:hover,
+.btn:focus {
   background-color: rgba(var(--primary-color-rgb), 0.75);
 }
 
 /* ==================== */
 /* LINK */
 /* ==================== */
-a:link,
-a:visited {
-  color: white;
+a {
   text-decoration: none;
+}
+
+.link:link,
+.link:visited {
+  color: white;
   transition: all 300ms;
 }
-a:hover {
+.link:hover {
   color: var(--primary-color);
   text-decoration: underline;
+}
+
+/* ==================== */
+/* 404: NOT FOUND */
+/* ==================== */
+.not-found {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.not-found h1 {
+  font-size: 8rem;
+  margin: 0;
+}
+.not-found h2 {
+  margin: 0 0 20px;
+  font-size: 3.5rem;
 }
