@@ -26,12 +26,12 @@
     <section>
       <h2>Valid date</h2>
       <pre>
-        GET /api/timestamp/2020-12-30
+        <span class="key">GET</span> /api/timestamp/2020-12-30
       </pre>
       <pre>
         {
-        &emsp; "unix": 1609286400000,
-        &emsp; "utc": "Wed, Dec 30, 2020, 01:00:00 GMT+1"
+        &emsp; <span class="key">"unix"</span>: 1609286400000,
+        &emsp; <span class="key">"utc"</span>: "Wed, Dec 30, 2020, 01:00:00 GMT+1"
         }
       </pre>
       <form action="api/timestamp/2020-12-30" method="GET">
@@ -43,12 +43,12 @@
     <section>
       <h2>Unix timestamp</h2>
       <pre>
-        GET /api/timestamp/1451001600000
+        <span class="key">GET</span> /api/timestamp/1451001600000
       </pre>
       <pre>
         {
-        &emsp; "unix": 1451001600000,
-        &emsp; "utc": "Fri, Dec 25, 2015, 01:00:00 GMT+1"
+        &emsp; <span class="key">"unix"</span>: 1451001600000,
+        &emsp; <span class="key">"utc"</span>: "Fri, Dec 25, 2015, 01:00:00 GMT+1"
         }
       </pre>
       <form action="api/timestamp/1451001600000" method="GET">
@@ -63,12 +63,12 @@
         <nobr>(empty parameter)</nobr>
       </h2>
       <pre>
-        GET /api/timestamp
+        <span class="key">GET</span> /api/timestamp
       </pre>
       <pre>
         {
-        &emsp; "unix": 1611947123417,
-        &emsp; "utc": "Fri, Jan 29, 2021, 20:05:23 GMT+1"
+        &emsp; <span class="key">"unix"</span>: 1611947123417,
+        &emsp; <span class="key">"utc"</span>: "Fri, Jan 29, 2021, 20:05:23 GMT+1"
         }
       </pre>
       <form action="api/timestamp" method="GET">
@@ -80,11 +80,11 @@
     <section>
       <h2>Invalid date</h2>
       <pre>
-        GET /api/hello-guys
+        <span class="key">GET</span> /api/hello-guys
       </pre>
       <pre>
         {
-        &emsp; "error": "Invalid Date"
+        &emsp; <span class="key">"error"</span>: "Invalid Date"
         }
       </pre>
       <form action="api/timestamp/hello-guys" method="GET">
