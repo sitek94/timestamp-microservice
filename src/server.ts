@@ -29,7 +29,6 @@ app.get('/api/timestamp/', (req, res) => {
 app.get('/api/timestamp/:date_string?', (req, res) => {
   const dateString = req.params.date_string;
 
-
   // dateString starts with 5 digits, treat it as timestamp
   if (/^\d{5,}/.test(dateString)) {
     const timestamp = +dateString;
@@ -53,6 +52,10 @@ app.get('/api/timestamp/:date_string?', (req, res) => {
     unix: dateObj.getTime(),
     utc: dateObj.toUTCString(),
   });
+});
+
+app.use((req, res) => {
+  res.status(404).sendFile(path.resolve('views/404.html'));
 });
 
 const PORT = process.env.PORT || 5000;
